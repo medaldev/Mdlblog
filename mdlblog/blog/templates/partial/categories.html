@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div id="gtco-main">
+    <div class="container">
+        <div class="row row-pb-md">
+            <div class="col-md-12">
+                <ul id="gtco-post-list">
+                    {% for category in categories %}
+                    <li class="full entry animate-box" data-animate-effect="fadeIn">
+                        <a href="/">
+                            <div class="entry-img" style="background-image: url(images/img_1.jpg"></div>
+                            <div class="entry-desc">
+                                <h3>{{category.title}}</h3>
+                                <p>{{category.content}}</p>
+                            </div>
+                        </a>
+                    </li>
+
+                    {% endfor %}
+
+
+
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}
