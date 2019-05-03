@@ -55,3 +55,14 @@ class CategoriesView(TemplateView):
             "categories": Category.objects.all(),
         }
         return render(request, self.template_name, render_data)
+
+
+class NotFound(TemplateView):
+    template_name = 'partial/404.html'
+
+    def get(self, request):
+        render_data = {
+            "page_title": "404",
+            "categories": Category.objects.all(),
+        }
+        return render(request, self.template_name, render_data)
