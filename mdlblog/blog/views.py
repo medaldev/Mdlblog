@@ -9,3 +9,8 @@ class Home(TemplateView):
         return render(request, self.template_name, {})
 
 
+class Post(TemplateView):
+    template_name = 'partial/post.html'
+
+    def get(self, request, post_id):
+        return render(request, self.template_name, {})
