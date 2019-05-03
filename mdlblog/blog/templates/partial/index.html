@@ -7,10 +7,10 @@
             <div class="col-md-12">
                 <ul id="gtco-post-list">
                     <li class="full entry animate-box" data-animate-effect="fadeIn">
-                        <a href="single.html">
+                        <a href="/">
                             <div class="entry-img" style="background-image: url(images/img_1.jpg"></div>
                             <div class="entry-desc">
-                                <h3>How Web Hosting Can Impact Page Load Speed</h3>
+                                <h3>Современные технологии IT сферы</h3>
                                 <p>She packed her seven versalia, put her initial into the belt and made herself on the
                                     way. When she reached the first hills of the Italic Mountains, she had a last view
                                     back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet Village
@@ -21,40 +21,19 @@
                         <a href="#" class="post-meta">Business <span class="date-posted">4 days ago</span></a>
                     </li>
 
-
+                    {% for post in posts %}
                     <li class="one-third entry animate-box" data-animate-effect="fadeIn">
-                        <a href="single.html">
+                        <a href="/posts/{{post.id}}">
                             <div class="entry-img" style="background-image: url(images/img_4.jpg"></div>
                             <div class="entry-desc">
-                                <h3>How Web Hosting Can Impact Page Load Speed</h3>
-                                <p>She packed her seven versalia, put her initial into the belt and made herself on the
-                                    way.</p>
+                                <h3>{{post.title}}</h3>
+                                <p>{{post.content}}</p>
                             </div>
                         </a>
-                        <a href="single.html" class="post-meta">Business <span class="date-posted">4 days ago</span></a>
+                        <a href="single.html" class="post-meta">Категория <span class="date-posted">{{post.date_created}}</span></a>
                     </li>
-                    <li class="one-third entry animate-box" data-animate-effect="fadeIn">
-                        <a href="single.html">
-                            <div class="entry-img" style="background-image: url(images/img_5.jpg"></div>
-                            <div class="entry-desc">
-                                <h3>How Web Hosting Can Impact Page Load Speed</h3>
-                                <p>She packed her seven versalia, put her initial into the belt and made herself on the
-                                    way.</p>
-                            </div>
-                        </a>
-                        <a href="single.html" class="post-meta">Business <span class="date-posted">4 days ago</span></a>
-                    </li>
-                    <li class="one-third entry animate-box" data-animate-effect="fadeIn">
-                        <a href="single.html">
-                            <div class="entry-img" style="background-image: url(images/img_6.jpg"></div>
-                            <div class="entry-desc">
-                                <h3>How Web Hosting Can Impact Page Load Speed</h3>
-                                <p>She packed her seven versalia, put her initial into the belt and made herself on the
-                                    way.</p>
-                            </div>
-                        </a>
-                        <a href="single.html" class="post-meta">Business <span class="date-posted">4 days ago</span></a>
-                    </li>
+                    {% endfor %}
+
 
 
                 </ul>

@@ -8,7 +8,8 @@ class Home(TemplateView):
 
     def get(self, request):
         render_data = {
-            "posts": Post.objects.all()
+            "page_title": "Современные технологии IT сферы",
+            "posts": Post.objects.all(),
         }
         return render(request, self.template_name, render_data)
 
@@ -17,4 +18,9 @@ class PostView(TemplateView):
     template_name = 'partial/post.html'
 
     def get(self, request, post_id):
-        return render(request, self.template_name, {})
+        post = Post.objects.get(id=post_id)
+        render_data = {
+            "page_title": post.title,
+            "post": post,
+        }
+        return render(request, self.template_name, render_data)
